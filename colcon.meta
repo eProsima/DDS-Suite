@@ -1,0 +1,18 @@
+
+{
+    "names": {
+        "fastrtps": {
+            "cmake-args": [
+                "-DSECURITY=ON",
+                "-DCOMPILE_EXAMPLES=ON",
+                "-DFASTDDS_STATISTICS=ON",
+            ],
+        },
+
+        "fastdds_monitor": {
+            "cmake-args": [
+                "-DQT_PATH=/opt/qt515",
+            ],
+        },
+    }
+}
