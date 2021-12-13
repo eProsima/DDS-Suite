@@ -1,6 +1,7 @@
 name: Manual and scheduled job
 
 on:
+  push:
   workflow_dispatch:
 jobs:
   test:
