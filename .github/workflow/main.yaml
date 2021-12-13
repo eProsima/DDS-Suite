@@ -1,8 +1,6 @@
 name: Manual and scheduled job
 
 on:
-  schedule:
-     - cron:  '0 3 * * *'
   workflow_dispatch:
 jobs:
   test:
