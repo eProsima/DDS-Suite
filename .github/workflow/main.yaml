@@ -1,0 +1,14 @@
+name: Manual and scheduled job
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Test
+        id: test
+        run: echo "$(date +'%d-%m-%Y %H:%M')"
