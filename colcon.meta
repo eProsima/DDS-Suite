@@ -14,5 +14,18 @@
                 "-DQT_PATH=/opt/qt515",
             ],
         },
+
+        "microxrcedds_agent": {
+            "cmake-args": [
+                "-DUAGENT_USE_SYSTEM_FASTDDS=ON",
+                "-DUAGENT_USE_SYSTEM_FASTCDR=ON",
+            ],
+        },
+
+        "microxrcedds_client": {
+            "cmake-args": [
+                "-DUCLIENT_BUILD_EXAMPLES=ON",
+            ],
+        },
     }
 }
