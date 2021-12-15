@@ -17,6 +17,7 @@
 
         "microxrcedds_agent": {
             "cmake-args": [
+                "-DUAGENT_P2P_PROFILE=OFF",
                 "-DUAGENT_USE_SYSTEM_FASTDDS=ON",
                 "-DUAGENT_USE_SYSTEM_FASTCDR=ON",
             ],
