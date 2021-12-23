@@ -26,6 +26,7 @@
         "microxrcedds_client": {
             "cmake-args": [
                 "-DUCLIENT_BUILD_EXAMPLES=ON",
+                "-DUCLIENT_INSTALL_EXAMPLES=ON",
             ],
         },
     }
