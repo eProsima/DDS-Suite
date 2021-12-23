@@ -9,12 +9,6 @@
             ],
         },
 
-        "fastdds_monitor": {
-            "cmake-args": [
-                "-DQT_PATH=/opt/qt515",
-            ],
-        },
-
         "microxrcedds_agent": {
             "cmake-args": [
                 "-DUAGENT_P2P_PROFILE=OFF",
