@@ -10,7 +10,7 @@ repositories:
   Micro-XRCE-DDS-Client:
     type: git
     url: https://github.com/eProsima/Micro-XRCE-DDS-Client.git
-    version: v2.1.1-rc
+    version: v2.1.1
   Micro-XRCE-DDS-Gen:
     type: git
     url: https://github.com/eProsima/Micro-XRCE-DDS-Gen
