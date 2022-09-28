@@ -91,6 +91,11 @@ if __name__ == '__main__':
         repo_name = url_elements[-1]
         repo_owner = url_elements[-2]
 
+        # Filter out repos not owned by us, as we should manage them more
+        # carefully
+        if repo_owner.lower() != 'eprosima':
+            continue
+
         tags = github_get_tags(
             repository_owner=repo_owner,
             repository_name=repo_name,
