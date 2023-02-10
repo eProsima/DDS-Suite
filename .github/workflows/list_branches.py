@@ -21,7 +21,7 @@ import re
 import requests
 import json
 
-supported_branched = [
+supported_branches = [
     'eprosima-dds-suite',
     'fastdds-suite',
     'xrcedds-suite'
@@ -40,7 +40,7 @@ def github_get_branches(
     r = requests.get(url, headers=headers)
     r.raise_for_status()
     branches = []
-    regex = '|'.join('{}'.format(branch+'-.*') for branch in supported_branched)
+    regex = '|'.join('{}'.format(branch+'.*') for branch in supported_branches)
     release_pattern = re.compile(regex)
     for element in r.json():
         branches.append(element['name']) if release_pattern.match(element['name']) else branches
@@ -57,7 +57,7 @@ if __name__ == '__main__':
         '-t',
         '--token',
         help='Github token',
-        required=True,
+        required=False,
     )
     # Parse arguments
     args = parser.parse_args()
