@@ -27,6 +27,7 @@ supported_branches = [
     'xrcedds-suite'
 ]
 
+
 def github_get_branches(
         github_token=None):
     """."""
@@ -35,15 +36,18 @@ def github_get_branches(
         headers['Accept'] = 'application/vnd.github.v3+json'
         headers['Authorization'] = f'token {github_token}'
 
-    url = (f'https://api.github.com/repos/eprosima' +
-           f'/DDS-Suite/branches')
+    url = ('https://api.github.com/repos/eProsima/DDS-Suite/branches')
     r = requests.get(url, headers=headers)
     r.raise_for_status()
     branches = []
     regex = '|'.join('{}'.format(branch+'.*') for branch in supported_branches)
     release_pattern = re.compile(regex)
     for element in r.json():
-        branches.append(element['name']) if release_pattern.match(element['name']) else branches
+        branches.append(
+            element['name']
+        ) if release_pattern.match(
+            element['name']
+        ) else branches
 
     return branches
 
@@ -68,7 +72,5 @@ if __name__ == '__main__':
     )
 
     json_output = json.dumps(branches)
-
-    print (json_output)
-
+    print(json_output)
     exit(0)

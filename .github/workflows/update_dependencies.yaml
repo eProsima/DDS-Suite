@@ -11,10 +11,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        tracked_branch:
-          - 'main'
-          - 'fastdds-suite'
-          - 'xrcedds-suite'
+        tracked_branch: ${{ fromJson(python3 .github/workflows/list_branches.py --token ${{ secrets.RICHIPROSIMA_DDS_SUITE_TOKEN }}) }}
 
     steps:
       - uses: actions/checkout@v2
