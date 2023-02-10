@@ -6,12 +6,24 @@ on:
     - cron: '0 0 * * *'
 
 jobs:
+  list-branches:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - uses: actions/checkout@v2
+      - id: list-branches
+        run: echo "branches=$(python3 .github/workflows/list_branches.py --token ${{ secrets.RICHIPROSIMA_DDS_SUITE_TOKEN }})" >> $GITHUB_OUTPUT
+
+    outputs:
+      branches: ${{ steps.list-branches.outputs.branches }}
+
   update-dependencies:
+    needs: list-branches
     runs-on: ubuntu-latest
     strategy:
       fail-fast: false
       matrix:
-        tracked_branch: ${{ fromJson(python3 .github/workflows/list_branches.py --token ${{ secrets.RICHIPROSIMA_DDS_SUITE_TOKEN }}) }}
+        tracked_branch: ${{ fromJson(needs.list-branches.outputs.branches) }}
 
     steps:
       - uses: actions/checkout@v2
