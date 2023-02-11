@@ -43,10 +43,10 @@ jobs:
       - name: Update dependencies
         id: update_dependencies
         run: |
-          echo "::set-output name=updated::$(python3 .github/workflows/track_dependencies.py \
+          echo "updated=$(python3 .github/workflows/track_dependencies.py \
             --token ${{ secrets.RICHIPROSIMA_DDS_SUITE_TOKEN }} \
             --repos_file dds-suite.repos \
-            --output_file dds-suite.repos)"
+            --output_file dds-suite.repos) >> $GITHUB_OUTPUT"
 
       - name: Create pull request
         uses: peter-evans/create-pull-request@v3.10.1
