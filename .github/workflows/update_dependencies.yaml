@@ -6,18 +6,27 @@ on:
     - cron: '0 0 * * *'
 
 jobs:
+  list-branches:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+      - id: list-branches
+        run: echo "branches=$(python3 .github/workflows/list_branches.py --token ${{ secrets.RICHIPROSIMA_DDS_SUITE_TOKEN }})" >> $GITHUB_OUTPUT
+
+    outputs:
+      branches: ${{ steps.list-branches.outputs.branches }}
+
   update-dependencies:
+    needs: list-branches
     runs-on: ubuntu-latest
     strategy:
       fail-fast: false
       matrix:
-        tracked_branch:
-          - 'main'
-          - 'fastdds-suite'
-          - 'xrcedds-suite'
+        tracked_branch: ${{ fromJson(needs.list-branches.outputs.branches) }}
 
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
         with:
           ref: ${{ matrix.tracked_branch }}
 
@@ -34,13 +43,13 @@ jobs:
       - name: Update dependencies
         id: update_dependencies
         run: |
-          echo "::set-output name=updated::$(python3 .github/workflows/track_dependencies.py \
+          echo "updated=$(python3 .github/workflows/track_dependencies.py \
             --token ${{ secrets.RICHIPROSIMA_DDS_SUITE_TOKEN }} \
             --repos_file dds-suite.repos \
-            --output_file dds-suite.repos)"
+            --output_file dds-suite.repos) >> $GITHUB_OUTPUT"
 
       - name: Create pull request
-        uses: peter-evans/create-pull-request@v3.10.1
+        uses: peter-evans/create-pull-request@v4
         with:
           token: ${{ secrets.RICHIPROSIMA_DDS_SUITE_TOKEN }}
           committer: eProsima <ricardogonzalez@eprosima.com>
