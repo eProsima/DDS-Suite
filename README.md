@@ -16,7 +16,7 @@ Each of these suites is distributed by eProsima in the form of Docker images whi
 
 The repository tracks the version progression of the products contained in each of the suites through three principal branches, one for each suite.
 Furthermore, since each suite is versioned following a SEMVER pattern, there exist tracking branches for each minor version of each suite (for more information of the suites' versioning schemas, please refer to [Versioning and tagging](#versioning-and-tagging)).
-All these branches are captures in the following table:
+All these branches are captured in the following table:
 
 | Suite | Principal branch | Version branches |
 |-|-|-|
