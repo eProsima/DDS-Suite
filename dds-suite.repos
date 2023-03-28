@@ -18,47 +18,47 @@ repositories:
   ddsrouter:
     type: git
     url: https://github.com/eProsima/DDS-Router.git
-    version: v1.1.0
+    version: main
   dev-utils:
     type: git
     url: https://github.com/eProsima/dev-utils.git
-    version: v0.2.0
+    version: main
   fastcdr:
     type: git
     url: https://github.com/eProsima/Fast-CDR.git
-    version: v1.0.26
+    version: master
   fastdds:
     type: git
     url: https://github.com/eProsima/Fast-DDS.git
-    version: v2.9.0
+    version: release-v2100-rc
   fastdds_monitor:
     type: git
     url: https://github.com/eProsima/Fast-DDS-monitor.git
-    version: v1.3.0
+    version: main
   fastdds_python:
     type: git
     url: https://github.com/eProsima/Fast-DDS-python.git
-    version: v1.2.0
+    version: main
   fastdds_statistics_backend:
     type: git
     url: https://github.com/eProsima/Fast-DDS-statistics-backend.git
-    version: v0.8.0
+    version: main
   fastdds_visualizer_plugin:
     type: git
     url: https://github.com/eProsima/fastdds-visualizer-plugin.git
-    version: v1.0.0
+    version: main
   fastddsgen:
     type: git
     url: https://github.com/eProsima/Fast-DDS-Gen.git
-    version: v2.3.0
+    version: master
   fastddsgen/thirdparty/idl-parser:
     type: git
     url: https://github.com/eProsima/IDL-Parser.git
-    version: v1.4.0
+    version: master
   foonathan_memory_vendor:
     type: git
     url: https://github.com/eProsima/foonathan_memory_vendor.git
-    version: v1.2.2
+    version: master
   plotjuggler:
     type: git
     url: https://github.com/facontidavide/PlotJuggler.git
@@ -66,4 +66,4 @@ repositories:
   shapes-demo:
     type: git
     url: https://github.com/eProsima/ShapesDemo.git
-    version: v2.9.0
+    version: master
