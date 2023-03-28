@@ -46,6 +46,7 @@ jobs:
           echo "updated=$(python3 .github/workflows/track_dependencies.py \
             --token ${{ secrets.RICHIPROSIMA_DDS_SUITE_TOKEN }} \
             --repos_file dds-suite.repos \
+            --branch matrix.tracked_branch \
             --output_file dds-suite.repos) >> $GITHUB_OUTPUT"
 
       - name: Create pull request
