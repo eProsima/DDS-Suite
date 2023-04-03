@@ -123,15 +123,15 @@ if __name__ == '__main__':
                 args.branch in default_branches and
                 ver != tags[-1] and
                 (
-                    current_version[0] < new_version[0] or
+                    int(current_version[0]) < int(new_version[0]) or
                     (
-                        current_version[0] == new_version[0] and
-                        current_version[1] < new_version[1]
+                        int(current_version[0]) == int(new_version[0]) and
+                        int(current_version[1]) < int(new_version[1])
                     ) or
                     (
-                        current_version[0] == new_version[0] and
-                        current_version[1] == new_version[1] and
-                        current_version[2] < new_version[2]
+                        int(current_version[0]) == int(new_version[0]) and
+                        int(current_version[1]) == int(new_version[1]) and
+                        int(current_version[2]) < int(new_version[2])
                     )
                 )
             ) or
@@ -141,9 +141,9 @@ if __name__ == '__main__':
                 args.branch not in default_branches and
                 ver != tags[-1] and
                 (
-                    current_version[0] == new_version[0] and
-                    current_version[1] == new_version[1] and
-                    current_version[2] < new_version[2]
+                    int(current_version[0]) == int(new_version[0]) and
+                    int(current_version[1]) == int(new_version[1]) and
+                    int(current_version[2]) < int(new_version[2])
                 )
             )
         ):
