@@ -1,4 +1,12 @@
 repositories:
+  ddspipe:
+    type: git
+    url: https://github.com/eProsima/DDS-Pipe.git
+    version: v0.1.0
+  ddsrecorder:
+    type: git
+    url: https://github.com/eProsima/DDS-Recorder.git
+    version: v0.1.0
   ddsrouter:
     type: git
     url: https://github.com/eProsima/DDS-Router.git
@@ -39,6 +47,10 @@ repositories:
     type: git
     url: https://github.com/eProsima/IDL-Parser.git
     version: v1.5.0
+  fastddsspy:
+    type: git
+    url: https://github.com/eProsima/Fast-DDS-spy.git
+    version: v0.1.0
   foonathan_memory_vendor:
     type: git
     url: https://github.com/eProsima/foonathan_memory_vendor.git
