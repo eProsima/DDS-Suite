@@ -14,5 +14,13 @@
                 "-DQT_PATH=/opt/qt515",
             ],
         },
+
+        "ddsrecorder_tool":
+        {
+            "cmake-args":
+            [
+                "-DBUILD_DDSRECORDER_CONTROLLER=ON",
+            ],
+        },
     }
 }
