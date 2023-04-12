@@ -15,7 +15,7 @@
             ],
         },
 
-        "ddsrecorder_tool":
+        "controller_tool":
         {
             "cmake-args":
             [
