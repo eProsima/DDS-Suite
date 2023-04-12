@@ -15,6 +15,14 @@
             ],
         },
 
+        "controller_tool":
+        {
+            "cmake-args":
+            [
+                "-DBUILD_DDSRECORDER_CONTROLLER=ON",
+            ],
+        },
+
         "microxrcedds_agent": {
             "cmake-args": [
                 "-DUAGENT_P2P_PROFILE=OFF",
