@@ -2,19 +2,19 @@ repositories:
   ddspipe:
     type: git
     url: https://github.com/eProsima/DDS-Pipe.git
-    version: v0.1.0
+    version: v0.2.0
   ddsrecordreplay:
     type: git
     url: https://github.com/eProsima/DDS-Record-Replay.git
-    version: v0.1.0
+    version: v0.2.0
   ddsrouter:
     type: git
     url: https://github.com/eProsima/DDS-Router.git
-    version: v1.2.0
+    version: v2.0.0
   dev-utils:
     type: git
     url: https://github.com/eProsima/dev-utils.git
-    version: v0.3.0
+    version: v0.4.0
   fastcdr:
     type: git
     url: https://github.com/eProsima/Fast-CDR.git
@@ -26,7 +26,7 @@ repositories:
   fastdds_monitor:
     type: git
     url: https://github.com/eProsima/Fast-DDS-monitor.git
-    version: v1.4.0
+    version: v1.5.0
   fastdds_python:
     type: git
     url: https://github.com/eProsima/Fast-DDS-python.git
@@ -38,7 +38,7 @@ repositories:
   fastdds_statistics_backend:
     type: git
     url: https://github.com/eProsima/Fast-DDS-statistics-backend.git
-    version: v0.10.0
+    version: v0.11.0
   fastdds_visualizer_plugin:
     type: git
     url: https://github.com/eProsima/fastdds-visualizer-plugin.git
@@ -54,7 +54,7 @@ repositories:
   fastddsspy:
     type: git
     url: https://github.com/eProsima/Fast-DDS-spy.git
-    version: v0.1.0
+    version: v0.2.0
   foonathan_memory_vendor:
     type: git
     url: https://github.com/eProsima/foonathan_memory_vendor.git
