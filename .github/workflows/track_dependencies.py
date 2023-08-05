@@ -46,10 +46,9 @@ def github_get_tags(
     return tags
 
 
-def version_as_int(semver):
+def version_as_list(semver):
     """"."""
-    v = semver.split('-')[0].replace('v', '').replace('V', '').replace('.', '')
-    return v
+    return semver.split('-')[0].replace('v', '').replace('V', '').split('.')
 
 
 if __name__ == '__main__':
@@ -77,6 +76,12 @@ if __name__ == '__main__':
         help='Github token',
         required=True,
     )
+    parser.add_argument(
+        '-b',
+        '--branch',
+        help='Tracked branch',
+        required=True
+    )
     # Parse arguments
     args = parser.parse_args()
     args.repos_file = 'dds-suite.repos'
@@ -91,16 +96,57 @@ if __name__ == '__main__':
         repo_name = url_elements[-1]
         repo_owner = url_elements[-2]
 
+        # Filter out repos not owned by us, as we should manage them more
+        # carefully
+        if repo_owner.lower() != 'eprosima':
+            continue
+
         tags = github_get_tags(
             repository_owner=repo_owner,
             repository_name=repo_name,
             github_token=args.token
         )
 
-        ver = repos_file['repositories'][repo]['version']
-        if (ver != tags[-1] and
-                version_as_int(ver) < version_as_int(tags[-1])):
+        default_branches = [
+            'eprosima-dds-suite',
+            'fastdds-suite',
+            'xrcedds-suite'
+        ]
 
+        ver = repos_file['repositories'][repo]['version']
+        current_version = version_as_list(ver)
+        new_version = version_as_list(tags[-1])
+        if (
+            # This is a new tag with a higher SEMVER on a default branch; we
+            # want to update it
+            (
+                args.branch in default_branches and
+                ver != tags[-1] and
+                (
+                    int(current_version[0]) < int(new_version[0]) or
+                    (
+                        int(current_version[0]) == int(new_version[0]) and
+                        int(current_version[1]) < int(new_version[1])
+                    ) or
+                    (
+                        int(current_version[0]) == int(new_version[0]) and
+                        int(current_version[1]) == int(new_version[1]) and
+                        int(current_version[2]) < int(new_version[2])
+                    )
+                )
+            ) or
+            # This is a new tag in the same minor SEMVER but with a higher
+            # patch version; we want to update it
+            (
+                args.branch not in default_branches and
+                ver != tags[-1] and
+                (
+                    int(current_version[0]) == int(new_version[0]) and
+                    int(current_version[1]) == int(new_version[1]) and
+                    int(current_version[2]) < int(new_version[2])
+                )
+            )
+        ):
             output += f'{repo},{tags[-1]};'
             repos_file['repositories'][repo]['version'] = tags[-1]
             updated = True
