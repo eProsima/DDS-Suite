@@ -2,7 +2,7 @@ repositories:
   Micro-CDR:
     type: git
     url: https://github.com/eProsima/Micro-CDR.git
-    version: v2.0.0
+    version: v2.0.1
   Micro-XRCE-DDS-Agent:
     type: git
     url: https://github.com/eProsima/Micro-XRCE-DDS-Agent
@@ -26,7 +26,7 @@ repositories:
   fastdds:
     type: git
     url: https://github.com/eProsima/Fast-DDS.git
-    version: v2.6.5
+    version: v2.6.6
   fastdds_monitor:
     type: git
     url: https://github.com/eProsima/Fast-DDS-monitor.git
@@ -54,4 +54,4 @@ repositories:
   shapes-demo:
     type: git
     url: https://github.com/eProsima/ShapesDemo.git
-    version: v2.6.5
+    version: v2.6.6
