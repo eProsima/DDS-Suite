@@ -6,15 +6,15 @@ repositories:
   Micro-XRCE-DDS-Agent:
     type: git
     url: https://github.com/eProsima/Micro-XRCE-DDS-Agent
-    version: v2.4.1
+    version: v2.4.2
   Micro-XRCE-DDS-Client:
     type: git
     url: https://github.com/eProsima/Micro-XRCE-DDS-Client.git
-    version: v2.4.1
+    version: v2.4.2
   Micro-XRCE-DDS-Gen:
     type: git
     url: https://github.com/eProsima/Micro-XRCE-DDS-Gen
-    version: v2.0.1
+    version: v2.0.2
   fastcdr:
     type: git
     url: https://github.com/eProsima/Fast-CDR.git
@@ -22,7 +22,7 @@ repositories:
   fastdds:
     type: git
     url: https://github.com/eProsima/Fast-DDS.git
-    version: v2.11.2
+    version: v2.12.1
   foonathan_memory_vendor:
     type: git
     url: https://github.com/eProsima/foonathan_memory_vendor.git
