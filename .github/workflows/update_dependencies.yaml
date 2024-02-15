@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v3
+      - uses: eProsima/eProsima-CI/external/checkout@v0
       - id: list-branches
         run: echo "branches=$(python3 .github/workflows/list_branches.py --token ${{ secrets.RICHIPROSIMA_DDS_SUITE_TOKEN }})" >> $GITHUB_OUTPUT
 
@@ -26,7 +26,7 @@ jobs:
         tracked_branch: ${{ fromJson(needs.list-branches.outputs.branches) }}
 
     steps:
-      - uses: actions/checkout@v3
+      - uses: eProsima/eProsima-CI/external/checkout@v0
         with:
           ref: ${{ matrix.tracked_branch }}
 
