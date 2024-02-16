@@ -51,6 +51,20 @@ def version_as_list(semver):
     return semver.split('-')[0].replace('v', '').replace('V', '').split('.')
 
 
+def get_current_version_latest_patch(tags, current_version):
+    """."""
+    ret = None
+    for tag in tags:
+        tag_version = version_as_list(tag)
+        if (
+            int(current_version[0]) == int(tag_version[0]) and
+            int(current_version[1]) == int(tag_version[1]) and
+            int(current_version[2]) <= int(tag_version[2])
+        ):
+            ret = tag_version
+    return ret
+
+
 if __name__ == '__main__':
 
     updated = False
@@ -115,7 +129,9 @@ if __name__ == '__main__':
 
         ver = repos_file['repositories'][repo]['version']
         current_version = version_as_list(ver)
+        current_version_latest_patch = get_current_version_latest_patch(tags, current_version)
         new_version = version_as_list(tags[-1])
+
         if (
             # This is a new tag with a higher SEMVER on a default branch; we
             # want to update it
@@ -136,19 +152,20 @@ if __name__ == '__main__':
                 )
             ) or
             # This is a new tag in the same minor SEMVER but with a higher
-            # patch version; we want to update it
+            # patch version on a non default branch; we want to update it
             (
                 args.branch not in default_branches and
                 ver != tags[-1] and
                 (
-                    int(current_version[0]) == int(new_version[0]) and
-                    int(current_version[1]) == int(new_version[1]) and
-                    int(current_version[2]) < int(new_version[2])
+                    int(current_version[0]) == int(current_version_latest_patch[0]) and
+                    int(current_version[1]) == int(current_version_latest_patch[1]) and
+                    int(current_version[2]) < int(current_version_latest_patch[2])
                 )
             )
         ):
-            output += f'{repo},{tags[-1]};'
-            repos_file['repositories'][repo]['version'] = tags[-1]
+            current_version_latest_patch_str = 'v' + '.'.join(current_version_latest_patch)
+            output += f'{repo},{current_version_latest_patch_str};'
+            repos_file['repositories'][repo]['version'] = current_version_latest_patch_str
             updated = True
 
     if updated is True:
