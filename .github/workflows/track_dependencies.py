@@ -150,7 +150,14 @@ if __name__ == '__main__':
                         int(current_version[2]) < int(new_version[2])
                     )
                 )
-            ) or
+            )
+        ):
+            new_version_str = 'v' + '.'.join(new_version)
+            output += f'{repo},{new_version_str};'
+            repos_file['repositories'][repo]['version'] = new_version_str
+            updated = True
+
+        elif (
             # This is a new tag in the same minor SEMVER but with a higher
             # patch version on a non default branch; we want to update it
             (
