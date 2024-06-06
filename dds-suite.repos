@@ -30,7 +30,7 @@ repositories:
   fastdds_python:
     type: git
     url: https://github.com/eProsima/Fast-DDS-python.git
-    version: v1.4.1
+    version: v1.4.2
   fastdds_qos_profiles_manager:
     type: git
     url: https://github.com/eProsima/Fast-DDS-QoS-Profiles-Manager.git
