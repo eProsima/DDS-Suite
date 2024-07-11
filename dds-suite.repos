@@ -18,11 +18,11 @@ repositories:
   fastcdr:
     type: git
     url: https://github.com/eProsima/Fast-CDR.git
-    version: v2.2.1
+    version: v2.2.2
   fastdds:
     type: git
     url: https://github.com/eProsima/Fast-DDS.git
-    version: v2.14.1
+    version: v2.14.3
   foonathan_memory_vendor:
     type: git
     url: https://github.com/eProsima/foonathan_memory_vendor.git
