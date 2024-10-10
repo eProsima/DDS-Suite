@@ -5,7 +5,8 @@
             "cmake-args": [
                 "-DSECURITY=ON",
                 "-DCOMPILE_EXAMPLES=ON",
-                "-DFASTDDS_STATISTICS=ON",
+                "-DINSTALL_EXAMPLES=ON",
+                "-DFASTDDS_STATISTICS=ON"
             ],
         },
 
