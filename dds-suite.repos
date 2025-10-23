@@ -26,7 +26,7 @@ repositories:
   fastdds_monitor:
     type: git
     url: https://github.com/eProsima/Fast-DDS-monitor.git
-    version: feature/greedy-discovery-mode
+    version: feature/alerts-improvement
   fastdds_python:
     type: git
     url: https://github.com/eProsima/Fast-DDS-python.git
@@ -38,7 +38,7 @@ repositories:
   fastdds_statistics_backend:
     type: git
     url: https://github.com/eProsima/Fast-DDS-statistics-backend.git
-    version: feature/greedy-discovery-mode
+    version: feature/alerts-improvement
   fastdds_visualizer_plugin:
     type: git
     url: https://github.com/eProsima/fastdds-visualizer-plugin.git
