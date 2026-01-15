@@ -12,7 +12,7 @@
 
         "fastdds_monitor": {
             "cmake-args": [
-                "-DQT_PATH=/opt/qt515",
+                "-DQT_PATH=/opt/qt",
             ],
         },
 
