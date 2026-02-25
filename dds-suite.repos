@@ -2,59 +2,55 @@ repositories:
   ddspipe:
     type: git
     url: https://github.com/eProsima/DDS-Pipe.git
-    version: v1.2.0
+    version: v1.4.0
   ddsrecordreplay:
     type: git
     url: https://github.com/eProsima/DDS-Record-Replay.git
-    version: v1.2.0
+    version: v1.4.0
   ddsrouter:
     type: git
     url: https://github.com/eProsima/DDS-Router.git
-    version: v3.2.0
+    version: v3.4.0
   dev-utils:
     type: git
     url: https://github.com/eProsima/dev-utils.git
-    version: v1.2.0
+    version: v1.4.0
   fastcdr:
     type: git
     url: https://github.com/eProsima/Fast-CDR.git
-    version: v2.3.0
+    version: v2.3.5
   fastdds:
     type: git
     url: https://github.com/eProsima/Fast-DDS.git
-    version: v3.2.2
+    version: rc-v3.5.0
   fastdds_monitor:
     type: git
     url: https://github.com/eProsima/Fast-DDS-monitor.git
-    version: v3.2.0
+    version: v4.0.0
   fastdds_python:
     type: git
     url: https://github.com/eProsima/Fast-DDS-python.git
-    version: v2.2.0
-  fastdds_qos_profiles_manager:
-    type: git
-    url: https://github.com/eProsima/Fast-DDS-QoS-Profiles-Manager.git
-    version: v0.1.0
+    version: 2.5.x
   fastdds_statistics_backend:
     type: git
     url: https://github.com/eProsima/Fast-DDS-statistics-backend.git
-    version: v2.2.0
+    version: v2.4.0
   fastdds_visualizer_plugin:
     type: git
     url: https://github.com/eProsima/fastdds-visualizer-plugin.git
-    version: v2.2.0
+    version: v2.3.0
   fastddsgen:
     type: git
     url: https://github.com/eProsima/Fast-DDS-Gen.git
-    version: v4.0.4
+    version: 4.3.x
   fastddsgen/thirdparty/idl-parser:
     type: git
     url: https://github.com/eProsima/IDL-Parser.git
-    version: v4.0.4
+    version: 4.3.x
   fastddsspy:
     type: git
     url: https://github.com/eProsima/Fast-DDS-spy.git
-    version: v1.2.0
+    version: v1.4.0
   foonathan_memory_vendor:
     type: git
     url: https://github.com/eProsima/foonathan_memory_vendor.git
@@ -66,4 +62,4 @@ repositories:
   shapes-demo:
     type: git
     url: https://github.com/eProsima/ShapesDemo.git
-    version: v3.2.2
+    version: 3.5.x
